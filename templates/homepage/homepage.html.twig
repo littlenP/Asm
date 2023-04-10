@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomepageController!{% endblock %}
+{% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+{% endblock %}
+{% block body %}
+    <style type="text/css">
+        *{
+            margin: 0px; padding: 0px;
+            box-sizing: border-box;
+        }
+
+        #big_banner{
+            background-color: #000;
+            height: 925px;color: #fff;
+            padding-top: 20px;
+        }
+        #Slogan {
+            text-align: center;
+            background: #8B0000;
+            line-height: 45px;
+            margin: 0 auto;
+            margin-top: 10px;
+            color: white;
+        }
+        #Slogan_content{
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+        }
+        #category{
+            margin: 0 auto;
+            text-align: center;
+        }
+        #category_content{
+            width: 100%;
+            display: inline-block;
+        }
+        .item{
+            width: 25%;
+            float: left;
+            padding: 5px;
+        }
+        #header_what{
+            font-weight: bold;
+            font-size: 200%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border: 2px dotted gray;
+        }
+        #what_content{
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+        }
+        .item2{
+            width: 33%;
+            float: left;
+            padding : 5%;
+        }
+        #text{
+            text-align: left;
+            display: inline-block;
+            float: left;
+            padding: 20px 200px;
+            font-style: italic;
+            border-left: #008B8B;
+        }
+        #author{
+            padding-top: 1px;
+            width: 100%;
+            text-align: left;
+            display: inline-block;
+            padding-left: 230px;
+            font-size: 20px;
+            color: #008B8B;
+            font-style: italic;
+        }
+        #author li:before {
+            content: '— ';
+            margin-left: -20px;
+        }
+        #author li {
+            margin-left: 20px;
+            list-style: none;
+        }
+        #end_content{
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            background-color: black;
+        }
+        .item3{
+            width: 33%;
+            float: left;
+            padding : 5%;
+            color: white;
+        }
+    </style>
+    <section id="big_banner" >
+        <div align="center"><img src='{{ 'Uploads/Homepage/Banner 2.jpg' }}' width="1200" height="900" ></div>
+    </section><!--end big banner-->
+    <section id="Slogan">
+        <div id="Slogan_content">TRY EVERY FOOD IN THE EARTH</div>
+    </section><!--end slogan-->
+
+    <section id="category">
+        <div id="category_content">
+            <div class="item">
+                <i class="fa fa-heart" style="font-size:36px;"></i><br>
+                <h1>Review<br>With True</h1><br>
+                <div>Write Good Review</div>
+            </div>
+            <div class="item">
+                <i class="fa fa-bullhorn" style="font-size:36px"></i><br>
+                <h1>Friendly<br>Page</h1><br>
+                <div>24/24 service</div>
+            </div>
+            <div class="item">
+                <i class="fa fa-user" style="font-size:36px"></i><br>
+                <h1>For<br>Everyone</h1><br>
+                <div>Always support</div>
+            </div>
+            <div class="item">
+                <i class="fa fa-camera" style="font-size:36px"></i><br>
+                <h1>Images<br>of Foods</h1><br>
+                <div>Pretty photo and video</div>
+            </div>
+        </div>
+    </section><!--end category--><br>
+
+    <section style="text-align: center;">
+        <h1 align="center" id="header_what">What we do ?</h1><br>
+        <div id="what_content">
+            <div class="item2">
+                <h1 style="font-weight: bold; ">Eat</h1><br>
+            </div>
+            <div class="item2">
+                <h1 style="font-weight: bold; ">Feel</h1><br>
+            </div>
+            <div class="item2">
+                <h1 style="font-weight: bold; ">Review</h1><br>
+            </div>
+        </div>
+    </section><!--end what we do--><br>
+    <section style="text-align: center;" >
+        <div id="text">
+            <div>"Our page is a blog where people can share their feeling about food they have been tried.</div><br>
+            <div>Also we allow user can comment or post their blog to this page.</div><br>
+            <div>Our page also help user can have some good recommend about the restaurant they should go."</div><br>
+        </div><br>
+        <div id="author"><ul><li>ADMIN-NICK</li></ul></div>
+    </section><br>
+{% endblock %}

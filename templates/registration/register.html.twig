@@ -1,0 +1,89 @@
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<style type="text/css">
+body {
+background-image: url("https://64.media.tumblr.com/f4c6a491f322551603d5cc2dc431fa8a/95ed9f00f42cd081-cf/s1280x1920/9d95a7c4fccd543638bc93a7da81a4aa6ec54374.gifv");
+background-position: left;
+background-size: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 10hv;
+flex-direction: column;
+}
+
+*{
+font-family: sans-serif;
+box-sizing: border-box;
+}
+
+form {
+width: 500px;
+border: 2px solid #ccc;
+padding: 30px;
+background: #fff;
+border-radius: 15px;
+}
+
+h2 {
+text-align: center;
+margin-bottom: 40px;
+}
+
+input {
+display: block;
+border: 2px solid #ccc;
+width: 95%;
+padding: 10px;
+margin: 10px auto;
+border-radius: 5px;
+}
+.lb_ger {
+color: #888;
+font-size: 18px;
+padding: 10px;
+
+width: 150px;
+display: inline-block;
+line-height: 25px;
+font-weight: bold;
+color: #003399;
+}
+
+button {
+float: right;
+background: #555;
+padding: 10px 15px;
+color: #fff;
+border-radius: 5px;
+margin-right: 10px;
+border: none;
+}
+button:hover{
+opacity: .7;
+}
+.ca {
+font-size: 14px;
+display: inline-block;
+padding: 10px;
+text-decoration: none;
+color: #444;
+}
+.ca:hover {
+text-decoration: underline;
+}
+</style>
+    <h1>Register</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}

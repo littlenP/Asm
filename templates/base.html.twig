@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <style>
+                body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+                .w3-bar-block .w3-bar-item {padding:20px}
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+
+                .navbar {
+                    overflow: hidden;
+                    background-color: #333;
+                }
+
+                .navbar a {
+                    float: left;
+                    font-size: 16px;
+                    color: white;
+                    text-align: left;
+                    padding: 14px 14px;
+                    text-decoration: none;
+                }
+                .navbar2 a{
+                    float: right;
+                }
+                .dropdown {
+                    float: left;
+                    overflow: hidden;
+                }
+
+                .dropdown .dropbtn {
+                    font-size: 16px;
+                    border: none;
+                    outline: none;
+                    color: white;
+                    padding: 14px 16px;
+                    background-color: inherit;
+                    font-family: inherit;
+                    margin: 0;
+                }
+
+                .navbar a:hover, .dropdown:hover .dropbtn {
+                    background-color: red;
+                }
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #f9f9f9;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                }
+
+                .dropdown-content a {
+                    float: none;
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                    text-align: left;
+                }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+            </style>
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+    </head>
+    <body>
+    <div class="navbar">
+        <a href="{{ path('app_homepage') }}">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Review
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="{{ path('app_review') }}">Review food</a>
+                <a href="{{ path('app_chef') }}">Review chef</a>
+                <a href="{{ path('app_restaurant') }}">Review restaurant</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">User
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="{{ path('app_login')}}"> Login</a>
+                <a href="{{ path('app_user') }}">User page</a>
+                <a href="{{ path('app_create') }}">Add review</a>
+                <a href="{{ path('app_create_chef') }}">Add chef</a>
+                <a href="{{ path('app_create_restaurant') }}">Add restaurant</a>
+            </div>
+        </div>
+        <div class="navbar2">
+            <a href="{{ path('app_contactus') }}">Contact Us</a>
+            <a href="{{ path('app_aboutus') }}">About Us</a>
+        </div>
+    </div>
+
+    {% block body %}{% endblock %}
+
+    </body>
+</html>

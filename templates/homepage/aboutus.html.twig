@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomepageController!{% endblock %}
+
+{% block body %}
+    <style>
+        body{
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            font-size: 22px;
+            color: Red;
+        }
+        .block1{
+            background-color: #5eb5e0;
+        }
+        .block2{
+            background-color: #AAAAAA;
+        }
+    </style>
+<div class="block1">
+    <h5>Our blog is a blog platform</h5>
+    <div class="fakeimg"><img src='{{ 'Uploads/Aboutus/1.abus.jpg' }}' width="355px"></div>
+    <p>This page is create from our team</p>
+</div>
+<div class="block2">
+    <h3 style="color: #8B0000">B.T.M team</h3>
+    <h2 class="mt-5">You can find our group page in these social media</h2>
+    <div class="fakeimg"><img src='{{ 'Uploads/Aboutus/3.abus.jpg' }}' width="355px"></div><br>
+    <p>Just access our group page you can find any thing about my team!!!</p>
+    <a href="https://twitter.com/_IUofficial"><i class="fa fa-twitter" width="100px"></i></a>
+    <a href="https://www.instagram.com/dlwlrma/"><i class="fa fa-linkedin" width="100px"></i></a>
+    <a href="https://www.facebook.com/iu.marshmallow"><i class="fa fa-facebook" width="100px"></i></a>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RestaurantController!{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            background-color: #5eb5e0;
+        }
+    </style>
+    <tbody>
+    <tbody>
+    {% for restaurant in restaurants  %}
+        <tr>
+            <div class="w3-row-padding w3-padding-16 w3-center">
+                <div class="w3-quarter">
+                    <img src="{{ asset('uploads/Images/' ~ restaurant.restaurantimage) }}" style="width:100%">
+                    <h3>{{ restaurant.restaurantname }}</h3>
+                    <p>Description: {{ restaurant.descriptionrestaurant }} </p>
+                </div>
+                <td>
+                    {#                        <a href="{{ path('app_details', {'id': food.id}) }} " class='btn btn-success'>View</a>#}
+                    {#                        <a href="{{ path('app_edit', {'id': food.id}) }}" class='btn btn-default'>Edit</a>#}
+                    {#                        <a href="{{ path('app_delete', {'id': food.id}) }}" class='btn btn-danger'>Delete</a>#}
+                    <a href="{{ path('restaurant_edit',{'id':restaurant.id}) }}" class='btn btn-default'>Edit</a>
+                    <a href="{{ path('app_delete_restaurant', {'id':restaurant.id}) }} "class='btn btn-danger'>Delete</a>
+                </td>
+            </div>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <!-- Pagination -->
+    <div class="w3-center w3-padding-32">
+        <div class="w3-bar">
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+            <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+        </div>
+    </div>
+    </tbody>
+{% endblock %}
